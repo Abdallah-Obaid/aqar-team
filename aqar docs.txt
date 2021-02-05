@@ -1,0 +1,85 @@
+
+## https://aqar-team.herokuapp.com/signup
+use:  for signup 
+type: post 
+header: No header
+body:{
+      "username" :  "",             **required: true
+      "password":   "",             **required: true
+      "role":       "user",         **required: true
+      "points":     0,              **required: true
+     }
+response : token
+
+
+## https://aqar-team.herokuapp.com/signin  
+use:  for signin 
+type: post
+header: No header
+body:{
+      "username" : "",             **required: true
+      "password": "",              **required: true
+      }
+response :token
+
+
+## https://aqar-team.herokuapp.com/users   
+use:   get all users                
+type: get
+header: No header
+response :All user data
+
+
+## https://aqar-team.herokuapp.com/realeStates  
+use:   get all realeStates   
+type: get
+header: No header
+response :All realeStates
+
+
+## https://aqar-team.herokuapp.com/saveRealeStates 
+use:   save realeStates 
+type: post 
+body:
+  {
+  "name" :              "",           **required: true
+  "shortDescription":   "",           **required: true
+  "specialRealeStates": Boolean,      **required: false
+  "creationDate":       Date,         **required: false
+  "type":               "",           **required: true
+  "price":              Number,       **required: true
+  "RentOrSell":         "",           **required: true
+  "location":           "",           **required: false
+  "ownerName":          "",           **required: false
+  "phone":              "",           **required: true
+  "longDescription":    "",           **required: false
+  "imgUrl":             "",           **required: false
+  "imgUrls":            "",           **required: false
+  "TheNearestLocation": "",           **required: false
+  "ownerId":            "",           **required: false
+   }
+header: user token
+respose: realeStates 
+
+
+## https://aqar-team.herokuapp.com/getUserRealeStates 
+use:   get all user realstate
+type: get
+get: all user realstate
+header: user token
+respose: user realeStates 
+
+
+## https://aqar-team.herokuapp.com/getUserCartRealeStates    
+use:   get all realeStates in the user cart
+header: user token
+respose: realeStates in the user cart
+
+
+## https://aqar-team.herokuapp.com/saveCartRealesStates  
+use:  save aqar
+type: post 
+body:{
+     realeStateID:       "",          **required: true
+      }
+header: user token
